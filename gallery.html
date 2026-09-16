@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence - Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1d00,
+            #c96b00,
+            #ffb347
+        );
+
+    color:#333;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back{
+
+    padding:25px 5%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+.back a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FFD700;
+
+    color:#4b1d00;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.25);
+
+    transition:0.35s;
+}
+
+
+.back a:hover{
+
+    background:white;
+
+    color:#d35400;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    text-align:center;
+
+    padding:
+        10px 20px 35px;
+
+    color:white;
+}
+
+
+header h1{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:58px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.45);
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+header p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+    color:white;
+
+    font-weight:300;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.hero{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:
+        10px auto 45px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    padding:10px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.30);
+
+    animation:
+        fadeUp 0.9s ease;
+}
+
+
+.hero video{
+
+    width:100%;
+
+    display:block;
+
+    max-height:600px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    background:#000;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:
+        0 auto 50px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    border:
+        1px solid
+        rgba(255,215,0,0.2);
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.25);
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+/* =========================================
+   DESCRIPTION HEADINGS
+========================================= */
+
+.description h2{
+
+    text-align:center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    margin-bottom:25px;
+
+    font-size:32px;
+
+    position:relative;
+}
+
+
+.description h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:65px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:
+        10px auto 0;
+
+    border-radius:10px;
+}
+
+
+.description h2:not(:first-child){
+
+    margin-top:40px;
+}
+
+
+/* =========================================
+   DESCRIPTION TEXT
+========================================= */
+
+.description p{
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+    color:#555;
+
+    margin-bottom:20px;
+}
+
+
+.description b{
+
+    color:#8b3f00;
+
+    font-weight:600;
+}
+
+
+/* =========================================
+   WHY CHOOSE LIST
+========================================= */
+
+.description ul{
+
+    margin-top:25px;
+
+    padding-left:0;
+
+    list-style:none;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:12px 25px;
+}
+
+
+.description li{
+
+    font-size:15px;
+
+    color:#555;
+
+    padding:
+        12px 15px;
+
+    background:#fff9ed;
+
+    border-radius:10px;
+
+    border-left:
+        4px solid #FFD700;
+
+    transition:0.3s;
+}
+
+
+.description li:hover{
+
+    transform:
+        translateX(5px);
+
+    background:#fff2cc;
+
+    color:#5a2d0c;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1000,
+            #4b1d00
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:
+        3px solid #FFD700;
+}
+
+
+footer h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+
+footer p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+
+footer p:last-child{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:900px){
+
+    header h1{
+
+        font-size:48px;
+    }
+
+
+    .hero{
+
+        width:94%;
+    }
+
+
+    .description{
+
+        width:94%;
+
+        padding:30px;
+    }
+
+
+    .description ul{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .back{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .back a{
+
+        font-size:13px;
+
+        padding:
+            10px 20px;
+    }
+
+
+    header{
+
+        padding:
+            5px 15px 30px;
+    }
+
+
+    header h1{
+
+        font-size:38px;
+    }
+
+
+    header p{
+
+        font-size:15px;
+
+        line-height:1.6;
+    }
+
+
+    .hero{
+
+        width:94%;
+
+        padding:7px;
+
+        border-radius:20px;
+
+        margin-bottom:30px;
+    }
+
+
+    .hero video{
+
+        border-radius:14px;
+
+        max-height:400px;
+    }
+
+
+    .description{
+
+        width:94%;
+
+        padding:25px 20px;
+
+        border-radius:20px;
+    }
+
+
+    .description h2{
+
+        font-size:26px;
+
+        margin-bottom:20px;
+    }
+
+
+    .description p{
+
+        font-size:14px;
+
+        line-height:1.8;
+
+        text-align:left;
+    }
+
+
+    .description li{
+
+        font-size:14px;
+
+        padding:
+            10px 12px;
+    }
+
+
+    footer{
+
+        padding:
+            30px 15px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:400px){
+
+    header h1{
+
+        font-size:32px;
+    }
+
+
+    header p{
+
+        font-size:14px;
+    }
+
+
+    .description{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .description h2{
+
+        font-size:23px;
+    }
+
+
+    .description p{
+
+        font-size:13px;
+    }
+
+
+    .description li{
+
+        font-size:13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BACK BUTTON
+===================================== -->
+
+<div class="back">
+
+    <a href="index.html">
+        ⬅ Back to Home
+    </a>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+    <h1>
+        Gallery
+    </h1>
+
+    <p>
+        Take a Virtual Tour of JNR Girls PG
+    </p>
+
+</header>
+
+
+<!-- =====================================
+     HERO VIDEO
+===================================== -->
+
+<div class="hero">
+
+    <video
+        autoplay
+        muted
+        loop
+        controls
+        playsinline>
+
+        <source
+            src="movie.mp4"
+            type="video/mp4">
+
+        Your browser does not support
+        the video tag.
+
+    </video>
+
+</div>
+
+
+<!-- =====================================
+     DESCRIPTION
+===================================== -->
+
+<div class="description">
+
+
+    <h2>
+        Welcome to JNR Girls PG
+    </h2>
+
+
+    <p>
+
+        Welcome to <b>JNR Girls PG</b>, a premium
+        paying guest accommodation exclusively
+        for women, located in the heart of
+        <b>Electronic City, Bangalore</b>. We are
+        strategically situated near leading IT
+        companies and educational institutions
+        including <b>Infosys, Wipro, TCS, IFIM
+        College, PES University</b>, and many
+        other corporate offices and colleges.
+
+    </p>
+
+
+    <p>
+
+        Whether you're a student beginning your
+        academic journey or a working professional
+        building your career, JNR Girls PG offers
+        the perfect combination of comfort,
+        security, convenience, and affordability.
+        Our thoughtfully designed living spaces
+        create a peaceful environment where you
+        can study, work, and relax with complete
+        peace of mind.
+
+    </p>
+
+
+    <p>
+
+        We provide fully furnished
+        <b>Single Sharing, Double Sharing, and
+        Triple Sharing Rooms</b>, equipped with
+        comfortable beds, wardrobes, study tables,
+        attached bathrooms, high-speed Wi-Fi,
+        and modern interiors. Every room is
+        maintained to provide a clean, hygienic,
+        and welcoming atmosphere.
+
+    </p>
+
+
+    <p>
+
+        Residents enjoy freshly prepared hygienic
+        home-style meals every day along with
+        daily housekeeping, laundry support,
+        purified drinking water, uninterrupted
+        power backup, and excellent maintenance
+        services. Our dedicated staff ensures that
+        every resident feels at home.
+
+    </p>
+
+
+    <p>
+
+        Safety is our highest priority. The entire
+        premises are protected with
+        <b>24×7 CCTV surveillance, biometric entry
+        access, secure gates, and dedicated
+        security staff</b>, ensuring a safe and
+        comfortable environment exclusively for
+        women.
+
+    </p>
+
+
+    <p>
+
+        Located close to shopping malls,
+        supermarkets, restaurants, hospitals,
+        bus stops, and metro connectivity,
+        JNR Girls PG offers everything you need
+        within easy reach, making your everyday
+        life simple and convenient.
+
+    </p>
+
+
+    <p>
+
+        Browse through our gallery and promotional
+        video to explore our spacious rooms,
+        modern facilities, comfortable interiors,
+        and vibrant community. Experience the
+        quality of living that has made JNR Girls PG
+        a preferred choice for students and
+        professionals alike.
+
+    </p>
+
+
+    <!-- =====================================
+         WHY CHOOSE
+    ===================================== -->
+
+    <h2>
+        Why Choose JNR Girls PG?
+    </h2>
+
+
+    <ul>
+
+        <li>
+            ✔ Premium PG Exclusively for Women
+        </li>
+
+        <li>
+            ✔ Single, Double & Triple Sharing Rooms
+        </li>
+
+        <li>
+            ✔ Fully Furnished Modern Rooms
+        </li>
+
+        <li>
+            ✔ Hygienic Home-Style Food
+        </li>
+
+        <li>
+            ✔ High-Speed Wi-Fi
+        </li>
+
+        <li>
+            ✔ Daily Housekeeping
+        </li>
+
+        <li>
+            ✔ Laundry Service
+        </li>
+
+        <li>
+            ✔ 24×7 CCTV Surveillance
+        </li>
+
+        <li>
+            ✔ Biometric Entry Access
+        </li>
+
+        <li>
+            ✔ Continuous Power Backup
+        </li>
+
+        <li>
+            ✔ Safe & Peaceful Environment
+        </li>
+
+        <li>
+            ✔ Prime Location in Electronic City
+        </li>
+
+        <li>
+            ✔ Near Infosys, Wipro, TCS, IFIM & PES University
+        </li>
+
+        <li>
+            ✔ Friendly Community & Professional Management
+        </li>
+
+    </ul>
+
+
+</div>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h2>
+        JNR Residence
+    </h2>
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+    <p>
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

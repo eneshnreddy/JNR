@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence - Rooms</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1d00,
+            #c96b00,
+            #ffb347
+        );
+
+    color:#333;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back{
+
+    padding:25px 5%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+.back a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FFD700;
+
+    color:#4b1d00;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.25);
+
+    transition:0.35s;
+}
+
+
+.back a:hover{
+
+    background:white;
+
+    color:#d35400;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    text-align:center;
+
+    padding:
+        10px 20px 35px;
+
+    color:white;
+}
+
+
+header h1{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:58px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.45);
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+header p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+    color:white;
+
+    font-weight:300;
+}
+
+
+/* =========================================
+   ROOM CONTAINER
+========================================= */
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        10px 25px 55px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+
+    align-items:start;
+}
+
+
+/* =========================================
+   ROOM CARD
+========================================= */
+
+.card{
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(255,215,0,0.2);
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.25);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+    animation:
+        fadeUp 0.9s ease;
+}
+
+
+.card:hover{
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 28px 55px
+        rgba(50,20,0,0.35);
+}
+
+
+/* =========================================
+   ROOM VIDEO
+========================================= */
+
+.card video{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:#111;
+}
+
+
+/* Portrait Video */
+
+.card video.portrait{
+
+    height:400px;
+
+    object-fit:cover;
+
+}
+
+
+/* =========================================
+   VIDEO AREA
+========================================= */
+
+.video-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+
+.video-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:80px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.35)
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.content{
+
+    padding:28px 25px 30px;
+}
+
+
+.content h2{
+
+    text-align:center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+
+.content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:50px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:
+        9px auto 0;
+
+    border-radius:10px;
+}
+
+
+/* =========================================
+   PRICE / ROOM TYPE
+========================================= */
+
+.price{
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#d35400;
+
+    margin:
+        15px 0 18px;
+
+    background:#fff7df;
+
+    border-radius:20px;
+
+    padding:7px 15px;
+
+    display:block;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.content p{
+
+    text-align:left;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    color:#555;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================================
+   FACILITIES LIST
+========================================= */
+
+.content ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+}
+
+
+.content ul li{
+
+    padding:
+        10px 5px;
+
+    border-bottom:
+        1px solid #eee;
+
+    color:#555;
+
+    font-size:14px;
+
+    transition:0.25s;
+}
+
+
+.content ul li:last-child{
+
+    border-bottom:none;
+}
+
+
+.content ul li:hover{
+
+    color:#8b3f00;
+
+    padding-left:8px;
+}
+
+
+/* =========================================
+   BOOK NOW BUTTON
+========================================= */
+
+.book-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD700,
+            #e5a900
+        );
+
+    color:#4b1d00;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(120,60,0,0.20);
+
+    transition:0.35s;
+}
+
+
+.book-btn:hover{
+
+    background:#4b1d00;
+
+    color:#FFD700;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(50,20,0,0.30);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1000,
+            #4b1d00
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:
+        3px solid #FFD700;
+}
+
+
+footer h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+
+footer p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+
+footer p:last-child{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+    .container{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        padding:
+            10px 20px 50px;
+    }
+
+
+    header h1{
+
+        font-size:50px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:650px){
+
+    .back{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .back a{
+
+        font-size:13px;
+
+        padding:
+            10px 20px;
+    }
+
+
+    header{
+
+        padding:
+            5px 15px 30px;
+    }
+
+
+    header h1{
+
+        font-size:38px;
+    }
+
+
+    header p{
+
+        font-size:15px;
+
+        line-height:1.6;
+    }
+
+
+    .container{
+
+        grid-template-columns:1fr;
+
+        padding:
+            5px 15px 40px;
+
+        gap:25px;
+    }
+
+
+    .card{
+
+        width:100%;
+
+        border-radius:20px;
+    }
+
+
+    .card video{
+
+        height:230px;
+    }
+
+
+    .card video.portrait{
+
+        height:380px;
+    }
+
+
+    .content{
+
+        padding:
+            25px 20px 25px;
+    }
+
+
+    .content h2{
+
+        font-size:24px;
+    }
+
+
+    .content p{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .content ul li{
+
+        font-size:13px;
+
+        padding:
+            9px 4px;
+    }
+
+
+    footer{
+
+        padding:
+            30px 15px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:400px){
+
+    header h1{
+
+        font-size:32px;
+    }
+
+
+    header p{
+
+        font-size:14px;
+    }
+
+
+    .card video{
+
+        height:210px;
+    }
+
+
+    .card video.portrait{
+
+        height:340px;
+    }
+
+
+    .content{
+
+        padding:
+            22px 16px;
+    }
+
+
+    .content h2{
+
+        font-size:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BACK BUTTON
+===================================== -->
+
+<div class="back">
+
+    <a href="index.html">
+        ⬅ Back to Home
+    </a>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+    <h1>
+        JNR Residence
+    </h1>
+
+    <p>
+        Your Comfortable Home Away From Home
+    </p>
+
+</header>
+
+
+<!-- =====================================
+     ROOMS
+===================================== -->
+
+<div class="container">
+
+
+    <!-- =================================
+         SINGLE SHARING
+    ================================== -->
+
+    <div class="card">
+
+
+        <div class="video-wrapper">
+
+            <video
+                autoplay
+                muted
+                loop
+                playsinline>
+
+                <source
+                    src="one.mp4"
+                    type="video/mp4">
+
+                Your browser does not support
+                the video tag.
+
+            </video>
+
+        </div>
+
+
+        <div class="content">
+
+            <h2>
+                Single Sharing Room
+            </h2>
+
+
+            <div class="price">
+                Private Room
+            </div>
+
+
+            <p>
+
+                Enjoy complete privacy in our
+                spacious single-sharing room.
+                Perfect for students and working
+                professionals who need a peaceful
+                place to study, work, and relax.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✔ Comfortable Single Bed
+                </li>
+
+                <li>
+                    ✔ Attached Bathroom
+                </li>
+
+                <li>
+                    ✔ Study Table & Chair
+                </li>
+
+                <li>
+                    ✔ Spacious Wardrobe
+                </li>
+
+                <li>
+                    ✔ High-Speed Wi-Fi
+                </li>
+
+                <li>
+                    ✔ Daily Housekeeping
+                </li>
+
+                <li>
+                    ✔ 24×7 Security
+                </li>
+
+            </ul>
+
+
+            <a
+                href="https://wa.me/919888833359?text=Hello%20JNR%20Residence%2C%20I%20am%20interested%20in%20the%20Single%20Sharing%20Room."
+                target="_blank"
+                class="book-btn">
+
+                💬 Enquire Now
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         TWO SHARING
+    ================================== -->
+
+    <div class="card">
+
+
+        <div class="video-wrapper">
+
+            <video
+                autoplay
+                muted
+                loop
+                playsinline>
+
+                <source
+                    src="two.mp4"
+                    type="video/mp4">
+
+                Your browser does not support
+                the video tag.
+
+            </video>
+
+        </div>
+
+
+        <div class="content">
+
+            <h2>
+                Two Sharing Room
+            </h2>
+
+
+            <div class="price">
+                Twin Sharing
+            </div>
+
+
+            <p>
+
+                Designed for friends and roommates,
+                our twin-sharing rooms provide
+                comfort, affordability, and a
+                friendly environment with modern
+                amenities.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✔ Two Comfortable Beds
+                </li>
+
+                <li>
+                    ✔ Individual Wardrobes
+                </li>
+
+                <li>
+                    ✔ Study Tables
+                </li>
+
+                <li>
+                    ✔ Attached Bathroom
+                </li>
+
+                <li>
+                    ✔ High-Speed Wi-Fi
+                </li>
+
+                <li>
+                    ✔ Power Backup
+                </li>
+
+                <li>
+                    ✔ Daily Cleaning
+                </li>
+
+            </ul>
+
+
+            <a
+                href="https://wa.me/919888833359?text=Hello%20JNR%20Residence%2C%20I%20am%20interested%20in%20the%20Two%20Sharing%20Room."
+                target="_blank"
+                class="book-btn">
+
+                💬 Enquire Now
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         THREE SHARING
+    ================================== -->
+
+    <div class="card">
+
+
+        <div class="video-wrapper">
+
+            <video
+                class="portrait"
+                autoplay
+                muted
+                loop
+                playsinline>
+
+                <source
+                    src="three.mp4"
+                    type="video/mp4">
+
+                Your browser does not support
+                the video tag.
+
+            </video>
+
+        </div>
+
+
+        <div class="content">
+
+            <h2>
+                Three Sharing Room
+            </h2>
+
+
+            <div class="price">
+                Economy Sharing
+            </div>
+
+
+            <p>
+
+                An affordable option for students
+                looking for a safe and comfortable
+                place to stay with all the essential
+                facilities and a friendly atmosphere.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✔ Three Comfortable Beds
+                </li>
+
+                <li>
+                    ✔ Individual Storage
+                </li>
+
+                <li>
+                    ✔ Shared Study Area
+                </li>
+
+                <li>
+                    ✔ Attached Bathroom
+                </li>
+
+                <li>
+                    ✔ High-Speed Wi-Fi
+                </li>
+
+                <li>
+                    ✔ Healthy Meals
+                </li>
+
+                <li>
+                    ✔ CCTV Security
+                </li>
+
+            </ul>
+
+
+            <a
+                href="https://wa.me/919888833359?text=Hello%20JNR%20Residence%2C%20I%20am%20interested%20in%20the%20Three%20Sharing%20Room."
+                target="_blank"
+                class="book-btn">
+
+                💬 Enquire Now
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h2>
+        JNR Residence
+    </h2>
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+    <p>
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence - Facilities</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1d00,
+            #c96b00,
+            #ffb347
+        );
+
+    color:#333;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back{
+
+    padding:25px 5%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+.back a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FFD700;
+
+    color:#4b1d00;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.25);
+
+    transition:0.35s;
+}
+
+
+.back a:hover{
+
+    background:white;
+
+    color:#d35400;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    text-align:center;
+
+    padding:
+        10px 20px 35px;
+
+    color:white;
+}
+
+
+header h1{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:58px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.45);
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+header p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+    color:white;
+
+    font-weight:300;
+}
+
+
+/* =========================================
+   FACILITIES CONTAINER
+========================================= */
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        10px 25px 55px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+
+    align-items:start;
+}
+
+
+/* =========================================
+   FACILITY CARD
+========================================= */
+
+.card{
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(255,215,0,0.2);
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.25);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+    animation:
+        fadeUp 0.8s ease;
+}
+
+
+.card:hover{
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 28px 55px
+        rgba(50,20,0,0.35);
+}
+
+
+/* =========================================
+   FACILITY IMAGE
+========================================= */
+
+.card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:#eee;
+
+    transition:
+        transform 0.5s;
+}
+
+
+.card:hover img{
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================================
+   IMAGE WRAPPER EFFECT
+========================================= */
+
+.card{
+
+    position:relative;
+}
+
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFD700,
+            #d35400,
+            #FFD700
+        );
+
+    z-index:2;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content{
+
+    padding:
+        25px 25px 28px;
+}
+
+
+.content h2{
+
+    text-align:center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    font-size:23px;
+
+    margin-bottom:15px;
+
+    line-height:1.3;
+}
+
+
+.content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:50px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:
+        9px auto 0;
+
+    border-radius:10px;
+}
+
+
+.content p{
+
+    text-align:left;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-size:14px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1000,
+            #4b1d00
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:
+        3px solid #FFD700;
+}
+
+
+footer h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+
+footer p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+
+footer p:last-child{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+    .container{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        padding:
+            10px 20px 50px;
+    }
+
+
+    header h1{
+
+        font-size:50px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:650px){
+
+    .back{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .back a{
+
+        font-size:13px;
+
+        padding:
+            10px 20px;
+    }
+
+
+    header{
+
+        padding:
+            5px 15px 30px;
+    }
+
+
+    header h1{
+
+        font-size:38px;
+    }
+
+
+    header p{
+
+        font-size:15px;
+
+        line-height:1.6;
+    }
+
+
+    .container{
+
+        grid-template-columns:1fr;
+
+        padding:
+            5px 15px 40px;
+
+        gap:25px;
+    }
+
+
+    .card{
+
+        border-radius:20px;
+    }
+
+
+    .card img{
+
+        height:230px;
+    }
+
+
+    .content{
+
+        padding:
+            23px 20px 25px;
+    }
+
+
+    .content h2{
+
+        font-size:22px;
+    }
+
+
+    .content p{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    footer{
+
+        padding:
+            30px 15px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:400px){
+
+    header h1{
+
+        font-size:32px;
+    }
+
+
+    header p{
+
+        font-size:14px;
+    }
+
+
+    .container{
+
+        padding-left:12px;
+
+        padding-right:12px;
+    }
+
+
+    .card img{
+
+        height:210px;
+    }
+
+
+    .content{
+
+        padding:
+            20px 16px 22px;
+    }
+
+
+    .content h2{
+
+        font-size:21px;
+    }
+
+
+    .content p{
+
+        font-size:13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BACK BUTTON
+===================================== -->
+
+<div class="back">
+
+    <a href="index.html">
+        ⬅ Back to Home
+    </a>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+    <h1>
+        Our Facilities
+    </h1>
+
+    <p>
+        Everything You Need for a Comfortable & Safe Stay
+    </p>
+
+</header>
+
+
+<!-- =====================================
+     FACILITIES
+===================================== -->
+
+<div class="container">
+
+
+    <!-- =================================
+         WIFI
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="wifi.jpg"
+            alt="High-Speed Wi-Fi">
+
+        <div class="content">
+
+            <h2>
+                📶 High-Speed Wi-Fi
+            </h2>
+
+            <p>
+
+                Enjoy uninterrupted high-speed
+                internet throughout the residence.
+                Perfect for online classes, office
+                work, streaming, gaming, and video
+                calls.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         FOOD
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="food.png"
+            alt="Healthy Food">
+
+        <div class="content">
+
+            <h2>
+                🍽 Healthy Food
+            </h2>
+
+            <p>
+
+                Fresh, hygienic, and nutritious
+                breakfast, lunch, and dinner are
+                prepared every day to give residents
+                delicious home-style meals.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         LAUNDRY
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="washingmachine.png"
+            alt="Laundry Service">
+
+        <div class="content">
+
+            <h2>
+                🧺 Laundry Service
+            </h2>
+
+            <p>
+
+                Regular laundry service keeps your
+                clothes clean and fresh, saving your
+                valuable time and effort.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         HOUSEKEEPING
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="cleaning.png"
+            alt="Daily Housekeeping">
+
+        <div class="content">
+
+            <h2>
+                🧹 Daily Housekeeping
+            </h2>
+
+            <p>
+
+                Professional housekeeping staff
+                clean rooms and common areas every
+                day, maintaining a neat and hygienic
+                environment.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         SECURITY
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="cctv.png"
+            alt="24x7 Security">
+
+        <div class="content">
+
+            <h2>
+                🛡 24×7 Security
+            </h2>
+
+            <p>
+
+                Round-the-clock security with CCTV
+                surveillance and secure entry ensures
+                the safety of every resident.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         POWER BACKUP
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="power.png"
+            alt="24x7 Power Backup">
+
+        <div class="content">
+
+            <h2>
+                ⚡ Power Backup
+            </h2>
+
+            <p>
+
+                Complete power backup ensures
+                uninterrupted electricity during
+                outages so your daily routine is
+                never disturbed.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         PARKING
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="parking.png"
+            alt="Bike Parking">
+
+        <div class="content">
+
+            <h2>
+                🏍️ Parking Facility
+            </h2>
+
+            <p>
+
+                Safe and spacious parking is
+                available for two-wheelers inside
+                the residence premises.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         RECREATION
+    ================================== -->
+
+    <div class="card">
+
+        <img
+            src="games.png"
+            alt="Recreation Lounge">
+
+        <div class="content">
+
+            <h2>
+                🎮 Recreation Lounge
+            </h2>
+
+            <p>
+
+                Relax after a busy day in our
+                common lounge equipped with
+                comfortable seating, TV, indoor
+                games, and a friendly atmosphere.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h2>
+        JNR Residence
+    </h2>
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+    <p>
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

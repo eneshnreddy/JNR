@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',Arial,sans-serif;
+    background:#fff;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HEADER / NAVIGATION
+========================= */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:20px 5%;
+}
+
+nav{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 20px;
+
+    background:rgba(59,23,0,.75);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,215,0,.25);
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+
+/* =========================
+   LOGO + BRAND
+========================= */
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    display:block;
+}
+
+.brand-name{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+    white-space:nowrap;
+}
+
+.brand-name span{
+    color:#FFD700;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.brand-name strong{
+    color:white;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:2px;
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    list-style:none;
+}
+
+nav ul li a{
+    position:relative;
+
+    display:block;
+
+    text-decoration:none;
+    color:white;
+
+    font-size:14px;
+    font-weight:500;
+
+    padding:12px 14px;
+
+    border-radius:25px;
+
+    transition:.3s;
+}
+
+nav ul li a::after{
+    content:"";
+
+    position:absolute;
+    left:50%;
+    bottom:5px;
+
+    width:0;
+    height:2px;
+
+    background:#FFD700;
+
+    transform:translateX(-50%);
+
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#FFD700;
+    background:rgba(255,215,0,.10);
+}
+
+nav ul li a:hover::after{
+    width:55%;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    position:relative;
+
+    width:100%;
+    height:100vh;
+    min-height:650px;
+
+    background-image:url("PG.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* Dark overlay */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(40,12,0,.78),
+            rgba(96,35,0,.55),
+            rgba(0,0,0,.45)
+        );
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    color:white;
+
+    width:90%;
+    max-width:900px;
+
+    animation:fadeUp 1.2s ease;
+}
+
+.welcome{
+    display:inline-block;
+
+    color:#FFD700;
+
+    font-size:18px;
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    margin-bottom:10px;
+}
+
+.content h1{
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(50px,7vw,90px);
+
+    color:white;
+
+    line-height:1.1;
+
+    text-shadow:
+        3px 3px 10px rgba(0,0,0,.7);
+
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:clamp(18px,2vw,25px);
+
+    color:#fff;
+
+    margin-bottom:35px;
+
+    text-shadow:2px 2px 6px rgba(0,0,0,.7);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn,
+.btn2{
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:15px 32px;
+
+    border-radius:35px;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.35s;
+
+    min-width:170px;
+}
+
+
+/* Book button */
+
+.btn{
+    background:#FFD700;
+    color:#5a2d0c;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+}
+
+.btn:hover{
+    background:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.45);
+}
+
+
+/* Contact button */
+
+.btn2{
+    border:2px solid #FFD700;
+
+    color:white;
+
+    background:rgba(0,0,0,.25);
+}
+
+.btn2:hover{
+    background:#FFD700;
+    color:#5a2d0c;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:25px;
+
+    width:90%;
+    max-width:1200px;
+
+    margin:-70px auto 70px;
+
+    z-index:10;
+}
+
+.card{
+    background:white;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    border:1px solid rgba(211,84,0,.12);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.25);
+}
+
+
+/* Feature Icon */
+
+.icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD700,
+            #d68910
+        );
+
+    font-size:32px;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.2);
+}
+
+.card h3{
+    color:#5a2d0c;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#3b1700;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+.footer-logo{
+    color:#FFD700;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+footer p{
+    margin:6px 0;
+
+    color:#eee;
+}
+
+footer .copyright{
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:#bbb;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1100px){
+
+    header{
+        padding:15px 3%;
+    }
+
+    nav{
+        padding:10px 15px;
+    }
+
+    nav ul{
+        gap:2px;
+    }
+
+    nav ul li a{
+        padding:10px 8px;
+        font-size:13px;
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        margin-top:-50px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+    header{
+        position:absolute;
+
+        padding:10px;
+    }
+
+    nav{
+        flex-direction:column;
+
+        gap:10px;
+
+        padding:12px;
+
+        border-radius:15px;
+    }
+
+    .logo-area{
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .logo img{
+        width:55px;
+        height:55px;
+    }
+
+    .brand-name span{
+        font-size:18px;
+    }
+
+    .brand-name strong{
+        font-size:11px;
+    }
+
+    nav ul{
+        width:100%;
+
+        display:flex;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:2px;
+    }
+
+    nav ul li a{
+        padding:7px 8px;
+
+        font-size:11px;
+    }
+
+    .hero{
+        min-height:700px;
+
+        background-position:center;
+    }
+
+    .content{
+        margin-top:120px;
+    }
+
+    .welcome{
+        font-size:14px;
+
+        letter-spacing:3px;
+    }
+
+    .content h1{
+        font-size:48px;
+    }
+
+    .content p{
+        font-size:17px;
+    }
+
+    .btn,
+    .btn2{
+        width:100%;
+        max-width:260px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+
+        width:88%;
+
+        margin:30px auto 50px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:450px){
+
+    nav ul li a{
+        font-size:10px;
+
+        padding:6px 6px;
+    }
+
+    .brand-name span{
+        font-size:16px;
+    }
+
+    .brand-name strong{
+        font-size:10px;
+    }
+
+    .content h1{
+        font-size:40px;
+    }
+
+    .content p{
+        font-size:15px;
+    }
+
+    .features{
+        width:92%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav>
+
+
+    <!-- LOGO + NAME -->
+
+    <div class="logo-area">
+
+        <div class="logo">
+
+            <img
+                src="logo.png"
+                alt="JNR Residence Logo">
+
+        </div>
+
+        <div class="brand-name">
+
+            <span>
+                JNR PG
+            </span>
+
+            <strong>
+                FOR GIRLS
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="room.html">
+                Rooms
+            </a>
+        </li>
+
+        <li>
+            <a href="facillites.html">
+                Facilities
+            </a>
+        </li>
+
+        <li>
+            <a href="rules.html">
+                Rules & Regulations
+            </a>
+        </li>
+
+        <li>
+            <a href="gallery.html">
+                Gallery
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <div class="overlay"></div>
+
+
+    <div class="content">
+
+        <span class="welcome">
+            WELCOME TO
+        </span>
+
+        <h1>
+            JNR Residence
+        </h1>
+
+        <p>
+            Your Comfortable Home Away From Home
+        </p>
+
+
+        <div class="buttons">
+
+
+            <a
+                href="https://wa.me/919888833359"
+                class="btn"
+                target="_blank">
+
+                Book Your Room
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="btn2">
+
+                Contact Us
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+
+    <!-- WIFI -->
+
+    <div class="card">
+
+        <div class="icon">
+            📶
+        </div>
+
+        <h3>
+            High Speed WiFi
+        </h3>
+
+        <p>
+            Stay connected with reliable
+            high-speed internet.
+        </p>
+
+    </div>
+
+
+    <!-- FOOD -->
+
+    <div class="card">
+
+        <div class="icon">
+            🍽️
+        </div>
+
+        <h3>
+            Healthy Food
+        </h3>
+
+        <p>
+            Fresh and hygienic meals
+            prepared for our residents.
+        </p>
+
+    </div>
+
+
+    <!-- SECURITY -->
+
+    <div class="card">
+
+        <div class="icon">
+            🔒
+        </div>
+
+        <h3>
+            24/7 Security
+        </h3>
+
+        <p>
+            Safe and secure living with
+            round-the-clock security.
+        </p>
+
+    </div>
+
+
+    <!-- POWER BACKUP -->
+
+    <div class="card">
+
+        <div class="icon">
+            ⚡
+        </div>
+
+        <h3>
+            24/7 Power Backup
+        </h3>
+
+        <p>
+            Uninterrupted power backup
+            for a comfortable stay.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <div class="footer-logo">
+        JNR Residence
+    </div>
+
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+
+    <p class="copyright">
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>

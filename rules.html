@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence - Rules & Regulations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1d00,
+            #c96b00,
+            #ffb347
+        );
+
+    min-height:100vh;
+
+    color:#333;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back{
+
+    padding:25px 5%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+.back a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FFD700;
+
+    color:#4b1d00;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.25);
+
+    transition:0.35s;
+}
+
+
+.back a:hover{
+
+    background:white;
+
+    color:#d35400;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    text-align:center;
+
+    padding:
+        5px 20px 35px;
+
+    color:white;
+}
+
+
+header h1{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:56px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.45);
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+header p{
+
+    font-size:17px;
+
+    margin-top:10px;
+
+    color:white;
+
+    font-weight:300;
+}
+
+
+/* =========================================
+   MAIN RULES CARD
+========================================= */
+
+.rules-container{
+
+    width:90%;
+
+    max-width:1150px;
+
+    margin:
+        0 auto 55px;
+
+    padding:40px;
+
+    background:
+        rgba(255,255,255,0.98);
+
+    border-radius:25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(50,20,0,0.3);
+
+    animation:
+        fadeUp 0.8s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* GOLD TOP BORDER */
+
+.rules-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFD700,
+            #d35400,
+            #FFD700
+        );
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro{
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    max-width:950px;
+
+    margin:
+        0 auto 35px;
+
+    padding:
+        0 10px;
+}
+
+
+/* =========================================
+   RULE SECTION
+========================================= */
+
+.rule-section{
+
+    margin-bottom:25px;
+
+    padding:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf3,
+            #fff
+        );
+
+    border-left:
+        6px solid #d35400;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.07);
+
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+}
+
+
+.rule-section:hover{
+
+    transform:
+        translateX(5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.12);
+}
+
+
+/* =========================================
+   RULE HEADINGS
+========================================= */
+
+.rule-section h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    line-height:1.4;
+}
+
+
+.rule-section h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:45px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin-top:8px;
+
+    border-radius:10px;
+}
+
+
+/* =========================================
+   RULE LISTS
+========================================= */
+
+.rule-section ol,
+.rule-section ul{
+
+    padding-left:25px;
+}
+
+
+.rule-section li{
+
+    color:#444;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:8px;
+}
+
+
+.rule-section li strong{
+
+    color:#8b3f00;
+}
+
+
+/* =========================================
+   NORMAL PARAGRAPH INSIDE RULE
+========================================= */
+
+.rule-section p{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================
+   IMPORTANT NOTICE
+========================================= */
+
+.notice{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8dc,
+            #fff3cd
+        );
+
+    border:
+        2px solid #ffc107;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:30px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.06);
+}
+
+
+.notice h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#856404;
+
+    margin-bottom:12px;
+
+    font-size:24px;
+}
+
+
+.notice p{
+
+    color:#664d03;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+
+/* =========================================
+   CONTACT BOX
+========================================= */
+
+.contact{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    padding:28px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d35400,
+            #a04000
+        );
+
+    color:white;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(100,40,0,0.25);
+}
+
+
+.contact h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:27px;
+
+    margin-bottom:8px;
+
+    color:#FFD700;
+}
+
+
+.contact p{
+
+    font-size:15px;
+
+    margin-bottom:12px;
+}
+
+
+.contact a{
+
+    display:inline-block;
+
+    color:#FFD700;
+
+    font-size:19px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    padding:10px 22px;
+
+    border:
+        1px solid #FFD700;
+
+    border-radius:30px;
+
+    transition:0.3s;
+}
+
+
+.contact a:hover{
+
+    background:#FFD700;
+
+    color:#5a2d0c;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1000,
+            #4b1d00
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:
+        3px solid #FFD700;
+}
+
+
+footer h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+
+footer p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+
+footer p:last-child{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:900px){
+
+    .back{
+
+        padding:
+            20px;
+    }
+
+
+    header h1{
+
+        font-size:45px;
+    }
+
+
+    header p{
+
+        font-size:16px;
+    }
+
+
+    .rules-container{
+
+        width:94%;
+
+        padding:30px 22px;
+    }
+
+
+    .rule-section{
+
+        padding:20px;
+    }
+
+
+    .rule-section h2{
+
+        font-size:22px;
+    }
+
+
+    .rule-section li{
+
+        font-size:15px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .back{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .back a{
+
+        padding:
+            10px 20px;
+
+        font-size:13px;
+    }
+
+
+    header{
+
+        padding:
+            5px 15px 30px;
+    }
+
+
+    header h1{
+
+        font-size:35px;
+
+        line-height:1.2;
+    }
+
+
+    header p{
+
+        font-size:14px;
+
+        line-height:1.6;
+    }
+
+
+    .rules-container{
+
+        width:94%;
+
+        padding:
+            25px 15px;
+
+        border-radius:20px;
+    }
+
+
+    .intro{
+
+        font-size:14px;
+
+        line-height:1.7;
+
+        margin-bottom:25px;
+    }
+
+
+    .rule-section{
+
+        padding:18px;
+
+        margin-bottom:20px;
+
+        border-left-width:5px;
+    }
+
+
+    .rule-section:hover{
+
+        transform:none;
+    }
+
+
+    .rule-section h2{
+
+        font-size:20px;
+
+        margin-bottom:12px;
+    }
+
+
+    .rule-section li{
+
+        font-size:14px;
+
+        line-height:1.7;
+
+        margin-bottom:7px;
+    }
+
+
+    .rule-section p{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .notice{
+
+        padding:20px;
+
+        margin-top:20px;
+    }
+
+
+    .notice h2{
+
+        font-size:21px;
+    }
+
+
+    .notice p{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .contact{
+
+        padding:25px 15px;
+    }
+
+
+    .contact h2{
+
+        font-size:23px;
+    }
+
+
+    .contact a{
+
+        font-size:16px;
+
+        padding:9px 18px;
+    }
+
+
+    footer{
+
+        padding:
+            30px 15px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media(max-width:400px){
+
+    header h1{
+
+        font-size:30px;
+    }
+
+
+    .rules-container{
+
+        padding:
+            20px 12px;
+    }
+
+
+    .rule-section{
+
+        padding:15px;
+    }
+
+
+    .rule-section h2{
+
+        font-size:18px;
+    }
+
+
+    .rule-section li{
+
+        font-size:13px;
+
+        line-height:1.6;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     BACK BUTTON
+===================================== -->
+
+<div class="back">
+
+    <a href="index.html">
+        ⬅ Back to Home
+    </a>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+    <h1>
+        Rules &amp; Regulations
+    </h1>
+
+    <p>
+        JNR Residence – Important Rules for All Residents
+    </p>
+
+</header>
+
+
+<!-- =====================================
+     RULES CONTAINER
+===================================== -->
+
+<div class="rules-container">
+
+
+    <p class="intro">
+
+        To maintain a safe, clean, peaceful and comfortable environment
+        for all residents, every resident is required to strictly follow
+        the rules and regulations of JNR Residence.
+
+    </p>
+
+
+    <!-- SECURITY -->
+
+    <div class="rule-section">
+
+        <h2>🔐 1. Security</h2>
+
+        <ol>
+
+            <li>
+                Biometric authentication is mandatory while entering
+                and exiting the PG.
+            </li>
+
+            <li>
+                Residents must cooperate with the security and
+                management staff at all times.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- VISITORS -->
+
+    <div class="rule-section">
+
+        <h2>👩‍👧 2. Visitors Policy</h2>
+
+        <ol>
+
+            <li>
+                Outsiders are not allowed inside the PG premises.
+                If any unauthorized outsider is found, management
+                may directly issue a <strong>30-day notice</strong>
+                to the resident to vacate the premises.
+            </li>
+
+            <li>
+                Only the resident's <strong>mother</strong> is allowed
+                as a visitor.
+            </li>
+
+            <li>
+                A valid identity proof of the mother must be produced
+                when required.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- VACATING -->
+
+    <div class="rule-section">
+
+        <h2>🏠 3. Vacating &amp; Notice Period</h2>
+
+        <ol>
+
+            <li>
+                Residents must provide a minimum of
+                <strong>30 days' prior notice</strong> before vacating.
+            </li>
+
+            <li>
+                The security deposit collected at the time of admission
+                is refundable subject to the applicable PG terms and
+                provided that the required 30-day notice is given.
+            </li>
+
+            <li>
+                Residents must send their
+                <strong>Name, Room Number and Notice Issuing Date</strong>
+                to the management through WhatsApp.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- BEHAVIOUR -->
+
+    <div class="rule-section">
+
+        <h2>⚠️ 4. Behaviour &amp; Discipline</h2>
+
+        <ol>
+
+            <li>
+                If any issue, misconduct or violence is caused by a
+                resident, the owner/management reserves the right to
+                issue a <strong>30-day notice</strong> to vacate.
+            </li>
+
+            <li>
+                Residents must maintain peaceful and respectful
+                behaviour towards roommates, other residents and
+                management staff.
+            </li>
+
+            <li>
+                If there is any problem with a roommate or another
+                guest, residents should immediately inform management.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- FOOD -->
+
+    <div class="rule-section">
+
+        <h2>🍱 5. Food Rules</h2>
+
+        <ol>
+
+            <li>
+                Food is not allowed inside the rooms.
+            </li>
+
+            <li>
+                Food can only be packed during the
+                <strong>morning</strong>.
+            </li>
+
+            <li>
+                Packing afternoon and night meals is not allowed.
+            </li>
+
+            <li>
+                If a resident is found violating this rule,
+                a penalty of <strong>₹500</strong> will be charged.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- MAINTENANCE -->
+
+    <div class="rule-section">
+
+        <h2>🧹 6. Room Maintenance</h2>
+
+        <ol>
+
+            <li>
+                Residents must keep their rooms clean and properly
+                maintained.
+            </li>
+
+            <li>
+                Any damage caused to the room, furniture, fixtures
+                or other property may be charged to the resident.
+            </li>
+
+            <li>
+                Applicable damage charges may be deducted from the
+                security deposit.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- GARBAGE -->
+
+    <div class="rule-section">
+
+        <h2>🗑️ 7. Garbage &amp; Waste Disposal</h2>
+
+        <ol>
+
+            <li>
+                Waste must be disposed of only in the garbage bins
+                provided by JNR Residence.
+            </li>
+
+            <li>
+                Residents must not throw garbage in corridors,
+                staircases or other common areas.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- KEYS -->
+
+    <div class="rule-section">
+
+        <h2>🔑 8. Room Keys</h2>
+
+        <ol>
+
+            <li>
+                Residents are responsible for keeping their room keys
+                safe.
+            </li>
+
+            <li>
+                Management will not be responsible for the loss of
+                personal room keys.
+            </li>
+
+            <li>
+                A charge of <strong>₹500</strong> will be applicable
+                for a lost room key.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- RESPONSIBILITY -->
+
+    <div class="rule-section">
+
+        <h2>🛡️ 9. Responsibility &amp; Personal Belongings</h2>
+
+        <ol>
+
+            <li>
+                JNR Residence is not responsible for personal or
+                professional matters occurring outside the PG premises.
+            </li>
+
+            <li>
+                Residents are responsible for their valuable belongings,
+                including gold items, laptops, mobile phones, cash and
+                other personal valuables.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- PROHIBITED ACTIVITIES -->
+
+    <div class="rule-section">
+
+        <h2>🚫 10. Prohibited Activities</h2>
+
+        <ul>
+
+            <li>
+                Smoking is strictly prohibited inside the PG.
+            </li>
+
+            <li>
+                Consumption of alcohol is strictly prohibited inside
+                the PG.
+            </li>
+
+            <li>
+                Gambling is strictly prohibited inside the PG.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- LUGGAGE -->
+
+    <div class="rule-section">
+
+        <h2>🧳 11. Luggage Policy</h2>
+
+        <ol>
+
+            <li>
+                Only <strong>two trolley bags</strong> with minimum
+                necessary luggage are allowed per resident.
+            </li>
+
+            <li>
+                Residents are requested to avoid carrying unnecessary
+                luggage.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- RENT -->
+
+    <div class="rule-section">
+
+        <h2>💰 12. Rent Payment</h2>
+
+        <ol>
+
+            <li>
+                Monthly rent must be paid on or before the
+                <strong>5th of every month</strong>.
+            </li>
+
+            <li>
+                If the resident fails to pay the rent dues after the
+                5th of the month, a late payment charge of
+                <strong>₹100 per day</strong> will be applicable.
+            </li>
+
+            <li>
+                Residents staying during their notice period are
+                required to pay the applicable rent for that period.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- FACILITY RULES -->
+
+    <div class="rule-section">
+
+        <h2>⏰ 13. Facility Rules</h2>
+
+        <p>
+
+            Specific rules and timings for the following facilities
+            will be displayed separately in their respective areas:
+
+        </p>
+
+        <ul>
+
+            <li>Food Timings</li>
+
+            <li>Washing Machine</li>
+
+            <li>Fridge</li>
+
+            <li>Study Room</li>
+
+            <li>Working Space</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- IMPORTANT NOTICE -->
+
+    <div class="notice">
+
+        <h2>📢 Important Notice</h2>
+
+        <p>
+
+            Any additional rules and regulations may be introduced or
+            modified from time to time by the management. Residents are
+            required to follow such rules for the smooth and safe
+            functioning of JNR Residence.
+
+        </p>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="contact">
+
+        <h2>Need Help?</h2>
+
+        <p>
+            For any issue or complaint, please contact the management.
+        </p>
+
+        <a
+            href="https://wa.me/919888833359"
+            target="_blank">
+
+            💬 WhatsApp: 9888833359
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h2>
+        JNR Residence
+    </h2>
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+    <p>
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

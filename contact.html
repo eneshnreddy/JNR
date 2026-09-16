@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JNR Residence - Contact Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1d00,
+            #c96b00,
+            #ffb347
+        );
+
+    color:#333;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back{
+
+    padding:25px 5%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+.back a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FFD700;
+
+    color:#4b1d00;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.25);
+
+    transition:0.35s;
+}
+
+
+.back a:hover{
+
+    background:white;
+
+    color:#d35400;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    text-align:center;
+
+    padding:
+        10px 20px 35px;
+
+    color:white;
+}
+
+
+header h1{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:58px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.45);
+
+    animation:
+        fadeDown 0.8s ease;
+}
+
+
+header p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+    color:#fff;
+
+    font-weight:300;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        10px 25px 50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card{
+
+    width:100%;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:
+        1px solid
+        rgba(255,215,0,0.2);
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.25);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+    animation:
+        fadeUp 0.9s ease;
+}
+
+
+.card:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 28px 55px
+        rgba(50,20,0,0.30);
+}
+
+
+.card h2{
+
+    text-align:center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+    position:relative;
+}
+
+
+.card h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:10px auto 0;
+
+    border-radius:10px;
+}
+
+
+/* =========================================
+   CONTACT TEXT
+========================================= */
+
+.card p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+
+    color:#555;
+}
+
+
+.card strong{
+
+    color:#5a2d0c;
+
+    font-weight:600;
+}
+
+
+/* =========================================
+   PHONE LINK
+========================================= */
+
+.card a{
+
+    color:#8b3f00;
+
+    transition:0.3s;
+}
+
+
+.card a:hover{
+
+    color:#d35400;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.action-btn{
+
+    display:block;
+
+    text-decoration:none;
+
+    margin-top:14px;
+}
+
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD700,
+            #e5a900
+        );
+
+    color:#4b1d00;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 18px
+        rgba(120,60,0,0.20);
+
+    transition:0.35s;
+}
+
+
+button:hover{
+
+    background:#4b1d00;
+
+    color:#FFD700;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(50,20,0,0.30);
+}
+
+
+/* =========================================
+   MAP SECTION
+========================================= */
+
+.map-container{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:
+        0 auto 50px;
+}
+
+
+.map-card{
+
+    width:100%;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(50,20,0,0.25);
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+.map-card h2{
+
+    text-align:center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#8b3f00;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+
+.map-card h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:10px auto 0;
+
+    border-radius:10px;
+}
+
+
+.map{
+
+    width:100%;
+
+    height:380px;
+
+    border:none;
+
+    border-radius:18px;
+
+    display:block;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.15);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1000,
+            #4b1d00
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:
+        3px solid #FFD700;
+}
+
+
+footer h2{
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+
+footer p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+
+footer p:last-child{
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:900px){
+
+    header h1{
+
+        font-size:48px;
+    }
+
+
+    .container{
+
+        padding:
+            10px 20px 40px;
+    }
+
+
+    .card{
+
+        padding:30px;
+    }
+
+
+    .map-container{
+
+        width:94%;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .back{
+
+        padding:
+            20px 15px;
+    }
+
+
+    .back a{
+
+        font-size:13px;
+
+        padding:
+            10px 20px;
+    }
+
+
+    header{
+
+        padding:
+            5px 15px 30px;
+    }
+
+
+    header h1{
+
+        font-size:38px;
+    }
+
+
+    header p{
+
+        font-size:15px;
+
+        line-height:1.6;
+    }
+
+
+    .container{
+
+        padding:
+            5px 15px 35px;
+    }
+
+
+    .card{
+
+        padding:25px 20px;
+
+        border-radius:20px;
+    }
+
+
+    .card h2{
+
+        font-size:26px;
+    }
+
+
+    .card p{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .map-container{
+
+        width:94%;
+
+        margin-bottom:35px;
+    }
+
+
+    .map-card{
+
+        padding:20px;
+
+        border-radius:20px;
+    }
+
+
+    .map-card h2{
+
+        font-size:26px;
+    }
+
+
+    .map{
+
+        height:300px;
+
+        border-radius:14px;
+    }
+
+
+    footer{
+
+        padding:
+            30px 15px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:400px){
+
+    header h1{
+
+        font-size:32px;
+    }
+
+
+    header p{
+
+        font-size:14px;
+    }
+
+
+    .card{
+
+        padding:20px 16px;
+    }
+
+
+    button{
+
+        font-size:15px;
+
+        padding:13px;
+    }
+
+
+    .map{
+
+        height:260px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<div class="back">
+
+    <a href="index.html">
+        ⬅ Back to Home
+    </a>
+
+</div>
+
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+
+<header>
+
+    <h1>
+        Contact Us
+    </h1>
+
+    <p>
+        We're Here to Help You Find Your Perfect Stay
+    </p>
+
+</header>
+
+
+<!-- =========================
+     CONTACT DETAILS
+========================= -->
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>
+            Get in Touch
+        </h2>
+
+
+        <p>
+            <strong>
+                🏠 JNR PG For Girls
+            </strong>
+        </p>
+
+
+        <p>
+            Premium Paying Guest Accommodation
+            for Women
+        </p>
+
+
+        <p>
+
+            <strong>
+                📍 Address:
+            </strong>
+
+            <br>
+
+            JNR PG For Girls
+            <br>
+
+            Electronic City Phase 1,
+            <br>
+
+            Bengaluru, Karnataka - 560100
+
+        </p>
+
+
+        <p>
+
+            <strong>
+                📞 Phone:
+            </strong>
+
+            <br>
+
+            <a
+                href="tel:+919888833359"
+                style="text-decoration:none;">
+
+                +91 98888 33359
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <strong>
+                📧 Email:
+            </strong>
+
+            <br>
+
+            jnrresidence@gmail.com
+
+        </p>
+
+
+        <p>
+
+            <strong>
+                🕒 Office Hours:
+            </strong>
+
+            <br>
+
+            Monday – Sunday
+
+            <br>
+
+            8:00 AM – 9:00 PM
+
+        </p>
+
+
+        <p>
+
+            We welcome students and working
+            professionals. Contact us for room
+            availability, pricing, bookings, or
+            to schedule a visit. Our team is always
+            happy to assist you.
+
+        </p>
+
+
+        <!-- CALL -->
+
+        <a
+            class="action-btn"
+            href="tel:+919888833359">
+
+            <button>
+                📞 Call Now
+            </button>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="action-btn"
+            href="https://wa.me/919888833359"
+            target="_blank">
+
+            <button>
+                💬 WhatsApp
+            </button>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GOOGLE MAP
+========================= -->
+
+<div class="map-container">
+
+    <div class="map-card">
+
+        <h2>
+            📍 Our Location
+        </h2>
+
+
+        <iframe
+
+            class="map"
+
+            src="https://maps.google.com/maps?q=JNR%20Pg%20For%20Girls%2C%20Electronic%20City%2C%20Bengaluru&t=&z=17&ie=UTF8&iwloc=&output=embed"
+
+            loading="lazy"
+
+            allowfullscreen>
+
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        JNR Residence
+    </h2>
+
+    <p>
+        Comfort • Safety • Convenience
+    </p>
+
+    <p>
+        📍 Electronic City Phase 1, Bengaluru
+    </p>
+
+    <p>
+        📞 +91 98888 33359
+    </p>
+
+    <p>
+        © 2026 JNR Residence. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
