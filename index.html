@@ -16,7 +16,26 @@
 /* =========================
    RESET
 ========================= */
+.jnr-header {
+  padding: 15px 5%;
+  background: #ffffff;
+}
 
+.jnr-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #222222;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.jnr-brand img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
 *{
     margin:0;
     padding:0;
@@ -731,7 +750,12 @@ footer .copyright{
 </nav>
 
 </header>
-
+<header class="jnr-header">
+  <a href="/" class="jnr-brand">
+    <img src="logo.png" alt="JNR Residence Logo">
+    <span>JNR Residence</span>
+  </a>
+</header>
 
 <!-- =========================
      HERO
